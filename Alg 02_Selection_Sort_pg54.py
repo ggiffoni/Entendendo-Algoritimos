@@ -1,12 +1,8 @@
 def buscaMenor(arr):
 
-# Considera inicialmente que o menor valor é o primeiro do array.    
     menor = arr[0]
-
-# Considera inicialmente que o menor íncice é o zero.     
     menor_indice = 0
 
-#Testa elemento por elemento buscando o menor valor e retorna o índice do menor valor.    
     for i in range(1, len(arr)):
         if arr[i] < menor:
             menor = arr[i]
@@ -16,19 +12,35 @@ def buscaMenor(arr):
 
 def ordenacaoporSelecao(arr):
 
-# Define um array vazio onde serão armazenados os menores valores.    
     novoArr = []
 
     for i in range(len(arr)):
 
-# Define menor como o resultado da função buscaMenor que retorna o menor índice.         
         menor = buscaMenor(arr)
-
-# Adiciona ao novo array o elemento do menor índice que, por sua vez, será o menor elemento. 
-# O menor elemento também é retirado do array anterior.
         novoArr.append(arr.pop(menor))
     return novoArr
 
 
 print(ordenacaoporSelecao([5, 3, 6, 2, 10, 0, 23, 1]))
+
+# Array = [5, 3, 6, 2, 10, 0, 23, 1]
+
+# Da função buscaMenor, temos: 
+# menor = arr[5] = 0
+# menor_indice = 5
+
+# Da função ordenacaoporSelecao, temos na primeira iteração:
+# menor = 0
+# novoArr = [0]
+
+# Segunda Iteração:
+# Array = [5, 3, 6, 2, 10, 23, 1]
+# menor = 1
+# novoArr = [0, 1]
+
+# Terceira Iteração:
+# Array = [5, 3, 6, 2, 10, 23]
+# menor = 2
+# novoArr = [0, 1, 2]
+
     
